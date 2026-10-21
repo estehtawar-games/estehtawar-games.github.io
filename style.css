@@ -1,0 +1,154 @@
+/* EsTehTawar: gaya bersama semua halaman. Warna es teh: amber teh, putih es, hijau daun. */
+:root {
+  --bg: #fbf6ee;
+  --surface: #ffffff;
+  --surface-2: #f3eadb;
+  --text: #2e2422;
+  --muted: #6f625c;
+  --tea: #c8741f;
+  --tea-strong: #a65a10;
+  --leaf: #2f8f5b;
+  --line: #e6d9c5;
+  --shadow: 0 6px 24px rgba(80, 50, 20, 0.10);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1715;
+    --surface: #262019;
+    --surface-2: #2f271f;
+    --text: #f4ece4;
+    --muted: #b9aca2;
+    --tea: #f0a24c;
+    --tea-strong: #ffb766;
+    --leaf: #5cc58a;
+    --line: #3d3329;
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #1c1715;
+  --surface: #262019;
+  --surface-2: #2f271f;
+  --text: #f4ece4;
+  --muted: #b9aca2;
+  --tea: #f0a24c;
+  --tea-strong: #ffb766;
+  --leaf: #5cc58a;
+  --line: #3d3329;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3, .brand {
+  font-family: "Fredoka", "Nunito", system-ui, sans-serif;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+a { color: var(--tea-strong); text-underline-offset: 3px; }
+a:hover { color: var(--tea); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { width: 100%; max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.narrow { max-width: 760px; }
+
+/* Kepala halaman */
+.site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; color: var(--text); text-decoration: none; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px; flex: none;
+  background: linear-gradient(180deg, #fff 0 22%, #e9a54f 22% 100%);
+  border: 2px solid var(--tea-strong);
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.08);
+}
+.nav { display: flex; flex-wrap: wrap; gap: 4px 16px; font-weight: 700; font-size: 0.95rem; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--tea-strong); }
+
+/* Bagian utama */
+.hero { padding-top: 56px; padding-bottom: 40px; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.2rem); margin: 0 0 12px; }
+.hero p { font-size: 1.1rem; color: var(--muted); max-width: 620px; margin: 0; }
+.eyebrow { display: inline-block; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--leaf); margin-bottom: 10px; }
+
+section { padding: 24px 0 40px; }
+section h2 { font-size: 1.6rem; margin: 0 0 16px; }
+
+/* Kartu game */
+.game-card {
+  display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 20px; box-shadow: var(--shadow);
+}
+.game-card .shot { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.game-card h3 { font-size: 1.5rem; margin: 0 0 6px; }
+.game-card p { margin: 0 0 14px; color: var(--muted); }
+
+.badge {
+  display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; font-weight: 800;
+  background: var(--surface-2); color: var(--tea-strong); border: 1px solid var(--line);
+}
+
+.btn {
+  display: inline-block; padding: 10px 18px; border-radius: 12px; font-weight: 800; text-decoration: none;
+  background: var(--tea); color: #fff; border: 2px solid var(--tea-strong);
+}
+.btn:hover { background: var(--tea-strong); color: #fff; }
+.btn.ghost { background: transparent; color: var(--tea-strong); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Halaman game */
+.game-hero { display: grid; grid-template-columns: 1fr 260px; gap: 32px; align-items: center; padding-top: 48px; padding-bottom: 24px; }
+.game-hero h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 10px; }
+.game-hero .jukir { width: 160px; margin: 0 auto; filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.18)); }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 14px; }
+.feature { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+.feature h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.feature p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 260px)); gap: 16px; justify-content: center; }
+.shots img { border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+
+/* Halaman teks (kebijakan privasi) */
+.doc { padding-top: 40px; padding-bottom: 56px; }
+.doc h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); margin: 0 0 8px; }
+.doc h2 { font-size: 1.3rem; margin: 32px 0 8px; }
+.doc .meta { color: var(--muted); margin: 0 0 24px; }
+.doc ul { padding-left: 1.2em; }
+.doc li { margin: 4px 0; }
+.doc hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+.lang-switch { display: inline-flex; gap: 8px; margin-bottom: 20px; }
+
+/* Kaki halaman */
+.site-footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 0.92rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.site-footer a { color: var(--muted); }
+
+@media (max-width: 640px) {
+  .game-card { grid-template-columns: 1fr; }
+  .game-card .shot { max-width: 220px; }
+  .game-hero { grid-template-columns: 1fr; padding-top: 32px; }
+  .game-hero .jukir { width: 120px; order: -1; margin: 0; }
+  .hero { padding-top: 40px; }
+  .site-header .wrap { padding-top: 10px; padding-bottom: 10px; }
+  .nav { gap: 4px 14px; font-size: 0.9rem; }
+  .shots { grid-template-columns: 1fr 1fr; }
+}
+body { overflow-wrap: anywhere; }
