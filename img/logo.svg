@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="tea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7a548"/>
+      <stop offset="1" stop-color="#d46a17"/>
+    </linearGradient>
+    <clipPath id="glass"><path d="M13 13h38l-4.2 41.2a5 5 0 0 1-5 4.5H22.2a5 5 0 0 1-5-4.5Z"/></clipPath>
+  </defs>
+  <!-- sedotan -->
+  <path d="M42 3.5 33.5 40" stroke="#2d2226" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M42 3.5 33.5 40" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M42 3.5 33.5 40" stroke="#e4483b" stroke-width="3.6" stroke-linecap="butt" stroke-dasharray="4 4"/>
+  <!-- isi gelas: es teh -->
+  <g clip-path="url(#glass)">
+    <rect x="8" y="10" width="48" height="52" fill="#eaf7fd"/>
+    <path d="M8 24c6 -2.4 12 2.4 18 0s12 -2.4 18 0 9 1.6 12 0V62H8Z" fill="url(#tea)"/>
+    <rect x="16" y="17" width="12" height="11" rx="3" transform="rotate(-12 22 22.5)" fill="#dff4fc" stroke="#2d2226" stroke-width="2.4"/>
+    <rect x="29" y="19.5" width="11" height="10" rx="3" transform="rotate(14 34.5 24.5)" fill="#dff4fc" stroke="#2d2226" stroke-width="2.4"/>
+    <circle cx="25" cy="42" r="1.8" fill="#ffd9a6"/>
+    <circle cx="38" cy="47" r="1.4" fill="#ffd9a6"/>
+    <circle cx="31" cy="51" r="1.1" fill="#ffd9a6"/>
+    <path d="M19.5 18 22 50" stroke="#fff" stroke-opacity=".75" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- gelas -->
+  <path d="M13 13h38l-4.2 41.2a5 5 0 0 1-5 4.5H22.2a5 5 0 0 1-5-4.5Z" fill="none" stroke="#2d2226" stroke-width="3.4" stroke-linejoin="round"/>
+</svg>

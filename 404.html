@@ -3,13 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Halaman tidak ada</title>
+  <meta name="color-scheme" content="light">
+  <title>Parkiran kosong: halaman tidak ada</title>
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <style>
+    .lost { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 40px 16px; }
+    .lost .num { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(5rem, 22vw, 10rem); line-height: 1; color: var(--sun);
+      -webkit-text-stroke: 12px var(--ink); paint-order: stroke fill; text-shadow: 0 8px 0 var(--ink); transform: rotate(-3deg); }
+    .lost img { width: 130px; margin: 18px auto 0; animation: bob 1.6s ease-in-out infinite; transform-origin: 50% 100%; }
+    .lost h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); margin: 18px 0 8px; }
+    .lost p { color: var(--ink-soft); max-width: 460px; margin: 0 auto 24px; }
+  </style>
 </head>
 <body>
-  <main class="wrap narrow doc">
-    <h1>Halaman tidak ditemukan</h1>
-    <p>Sepertinya parkiran ini kosong. <a href="/">Kembali ke beranda</a>.</p>
+  <main class="lost">
+    <div>
+      <div class="num">404</div>
+      <img class="sprite" src="/img/sprites/jukir_1.png" alt="Jukir kebingungan">
+      <h1>Priiit! Parkirannya kosong.</h1>
+      <p>Halaman yang kamu cari tidak ada di sini. Mungkin sudah pindah lahan.</p>
+      <a class="btn" href="/">Kembali ke beranda</a>
+    </div>
   </main>
 </body>
 </html>

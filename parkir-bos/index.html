@@ -3,77 +3,294 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
   <title>Parkir Bos! Kerajaan Parkir</title>
-  <meta name="description" content="Game idle tycoon parkir dari EsTehTawar. Bangun kerajaan parkir dari teras rumah sampai alun-alun kota.">
-  <link rel="icon" href="../img/coin.png">
+  <meta name="description" content="Game idle tycoon parkir dari EsTehTawar. Rekrut jukir, usir maling helm, hadapi preman dan calo, dan bangun kerajaan parkir dari teras rumah sampai alun-alun kota.">
+  <meta property="og:title" content="Parkir Bos! Kerajaan Parkir">
+  <meta property="og:description" content="Dari tiga petak di teras, jadi raja parkir se-Konohara. Segera hadir di Google Play.">
+  <meta property="og:image" content="https://estehtawar-games.github.io/img/og.jpg">
+  <meta property="og:url" content="https://estehtawar-games.github.io/parkir-bos/">
+  <meta name="theme-color" content="#2b2340">
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip" href="#isi">Lewati ke isi</a>
+
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"></span>EsTehTawar</a>
-      <nav class="nav">
-        <a href="../">Beranda</a>
+      <a class="logo" href="../" aria-label="EsTehTawar, beranda">
+        <img src="../img/logo.svg" width="42" height="42" alt="">
+        <span class="wordmark"><span class="es">Es</span><span class="teh">Teh</span>Tawar</span>
+      </a>
+      <nav class="nav" aria-label="Menu utama">
         <a href="./" aria-current="page">Parkir Bos!</a>
-        <a href="mailto:estehtawar.games@gmail.com">Kontak</a>
+        <a class="hide-sm" href="#faq">FAQ</a>
+        <a class="btn small green" href="#penguji">Jadi penguji</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <div class="wrap game-hero">
-      <div>
-        <span class="badge">Segera hadir di Google Play</span>
-        <h1>Parkir Bos! Kerajaan Parkir</h1>
-        <p>Game idle tycoon tentang dunia parkir. Mulai dari tiga petak di teras rumah, lalu buka lahan baru:
-          dekat pasar, depan minimarket, terminal bus, pasar malam, mal, sampai alun-alun kota.
-          Uang tetap mengalir walau HP ditutup.</p>
-      </div>
-      <img class="jukir" src="../img/jukir.png" width="180" height="240" alt="Jukir, tokoh Parkir Bos!">
-    </div>
-
-    <section>
+  <main id="isi">
+    <!-- ===== Hero game ===== -->
+    <section class="game-hero">
       <div class="wrap">
-        <h2>Yang bisa kamu lakukan</h2>
-        <div class="features">
-          <div class="feature"><h3>Bangun lahan parkir</h3><p>Tambah slot motor dan mobil, pasang terpal peneduh, dan naikkan tarif.</p></div>
-          <div class="feature"><h3>Rekrut jukir</h3><p>Jukir menjaga slot dan menagih karcis, bahkan saat kamu tidak bermain.</p></div>
-          <div class="feature"><h3>Lawan para pengacau</h3><p>Maling helm, preman, jukir liar, sampai calo. Tap mereka sebelum pelangganmu kabur.</p></div>
-          <div class="feature"><h3>Urus surat izin</h3><p>Lengkapi surat izin dan syaratnya untuk membuka lahan berikutnya.</p></div>
-          <div class="feature"><h3>Tiga babak cerita</h3><p>Dari kampung ke Distrik Terminal lalu Pusat Kota, dengan tokoh dan masalah yang makin seru.</p></div>
-          <div class="feature"><h3>Buka cabang</h3><p>Kumpulkan Reputasi Juragan dan perluas kerajaan parkirmu di peta Konohara.</p></div>
+        <span class="chip tea">Idle tycoon · Android · Gratis dimainkan</span>
+        <h1 class="title-lockup">
+          <span class="big">PARKIR BOS!</span>
+          <span class="sub">Kerajaan Parkir</span>
+        </h1>
+        <p class="lead">Mulai dari tiga petak di teras rumah. Rekrut jukir, usir maling, tawar-menawar dengan preman, dan bangun kerajaan
+          parkir sampai ke mal dan alun-alun kota. Koin tetap mengalir walau HP-mu ditutup.</p>
+        <div class="actions">
+          <span class="play-badge" role="img" aria-label="Segera hadir di Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13.4 12l-9.8 9.7c-.4-.2-.6-.7-.6-1.2V3.5c0-.5.2-1 .6-1.2Z"/><path fill="#fbbc04" d="m16.7 8.8-3.3 3.2 3.3 3.2 3.8-2.1c1-.6 1-1.7 0-2.3Z"/><path fill="#4285f4" d="M3.6 2.3c.3-.2.8-.2 1.2 0l11.9 6.5-3.3 3.2Z"/><path fill="#ea4335" d="m13.4 12 3.3 3.2-11.9 6.5c-.4.2-.9.2-1.2 0Z"/></svg>
+            <span><small>Segera hadir di</small><strong>Google Play</strong></span>
+          </span>
+          <a class="btn green" href="#penguji">Jadi penguji awal</a>
+        </div>
+        <div class="lineup" aria-hidden="true">
+          <img class="sprite" src="../img/sprites/uc_ibu.png" alt="">
+          <img class="sprite villain" src="../img/sprites/thief_helmet.png" alt="">
+          <img class="sprite" src="../img/sprites/jukir_2.png" alt="">
+          <img class="sprite" src="../img/sprites/jukir_1.png" alt="" style="width:clamp(56px,12.5vw,140px)">
+          <img class="sprite" src="../img/sprites/uc_ojol.png" alt="">
+          <img class="sprite villain" src="../img/sprites/thug_1.png" alt="">
+          <img class="sprite" src="../img/sprites/uc_vip.png" alt="">
+        </div>
+      </div>
+      <div class="curb"></div>
+    </section>
+
+    <!-- ===== Cara main ===== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Cara main</span>
+          <h2>Hidup seorang <span class="mark">juragan parkir</span></h2>
+          <p>Gampang dimulai, susah berhenti. Tiga hal ini akan kamu lakukan berulang-ulang, dan rasanya makin seru.</p>
+        </div>
+        <div class="steps">
+          <article class="card step reveal">
+            <div class="ico"><img class="sprite" src="../img/sprites/upg_slots.png" alt=""><img class="sprite" src="../img/sprites/upg_jukir.png" alt=""></div>
+            <h3>Isi parkiran</h3>
+            <p>Tambah slot motor dan mobil, pasang terpal peneduh, dan rekrut jukir. Makin rapi lahanmu, makin banyak yang mampir.</p>
+          </article>
+          <article class="card step reveal">
+            <div class="ico"><img class="sprite" src="../img/sprites/coin.png" alt="" style="width:56px;height:56px;margin:4px"><img class="sprite" src="../img/sprites/upg_permit.png" alt=""></div>
+            <h3>Kumpulkan koin</h3>
+            <p>Tap koin dari setiap kendaraan, lengkapi surat izin, dan selesaikan misi harian. Tutup game pun jukirmu tetap bekerja.</p>
+          </article>
+          <article class="card step reveal">
+            <div class="ico"><img class="sprite" src="../img/sprites/upg_helmet.png" alt=""><img class="sprite" src="../img/sprites/upg_guard.png" alt=""></div>
+            <h3>Usir pengacau</h3>
+            <p>Maling helm, preman, calo, sampai penipu QR. Mereka ditandai cahaya merah. Tap cepat sebelum pelangganmu kabur!</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- ===== Galeri ===== -->
+    <section class="section bg-night" data-gallery>
       <div class="wrap">
-        <h2>Tangkapan layar</h2>
-        <div class="shots">
-          <img src="../img/parkirbos-pasar-malam.jpg" width="540" height="1180" alt="Lahan Pasar Malam di malam hari" loading="lazy">
-          <img src="../img/parkirbos-ramai.jpg" width="540" height="1180" alt="Pasar Malam ramai pengunjung" loading="lazy">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Tangkapan layar</span>
+          <h2>Tujuh lahan, tujuh suasana</h2>
+          <p>Geser untuk melihat. Setiap lahan punya pelanggan, pengacau, dan musiknya sendiri.</p>
+        </div>
+      </div>
+      <div class="gallery-track" tabindex="0" aria-label="Galeri tangkapan layar">
+        <figure><div class="phone"><img src="../img/shots/teras_rumah.jpg" width="1080" height="2350" alt="Lahan Teras Rumah" loading="lazy"></div><figcaption>Teras Rumah<small>Babak 1 · tempat semuanya dimulai</small></figcaption></figure>
+        <figure><div class="phone"><img src="../img/shots/dekat_pasar.jpg" width="1080" height="2350" alt="Lahan Dekat Pasar" loading="lazy"></div><figcaption>Dekat Pasar<small>Babak 1 · ramai ibu-ibu belanja</small></figcaption></figure>
+        <figure><div class="phone"><img src="../img/shots/terminal_bus.jpg" width="1080" height="2350" alt="Lahan Terminal Bus" loading="lazy"></div><figcaption>Terminal Bus<small>Babak 2 · wilayah Bang Toro</small></figcaption></figure>
+        <figure><div class="phone"><img src="../img/shots/pasar_malam.jpg" width="1080" height="2350" alt="Lahan Pasar Malam" loading="lazy"></div><figcaption>Pasar Malam<small>Babak 2 · bianglala dan lampu untai</small></figcaption></figure>
+        <figure><div class="phone"><img src="../img/shots/mal_konohara.jpg" width="1080" height="2350" alt="Lahan Mal Konohara" loading="lazy"></div><figcaption>Mal Konohara<small>Babak 3 · tarifnya bikin kaget</small></figcaption></figure>
+        <figure><div class="phone"><img src="../img/shots/alun_alun.jpg" width="1080" height="2350" alt="Lahan Alun-Alun Kota" loading="lazy"></div><figcaption>Alun-Alun Kota<small>Babak 3 · puncak kekuasaan</small></figcaption></figure>
+        <figure><div class="phone"><img src="../img/shots/map.jpg" width="1080" height="2350" alt="Layar Peta Kerajaan" loading="lazy"></div><figcaption>Peta Kerajaan<small>Lihat semua cabangmu</small></figcaption></figure>
+      </div>
+      <div class="gallery-nav">
+        <button type="button" data-dir="-1" aria-label="Sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" data-dir="1" aria-label="Berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ===== Tiga babak ===== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Alur cerita</span>
+          <h2>Tiga babak, tiga dunia</h2>
+          <p>Makin jauh kamu melangkah, makin mahal lahannya, dan makin licin lawannya.</p>
+        </div>
+        <div class="acts">
+          <article class="card act reveal">
+            <div class="pic" style="background-image:url('../img/bg/teras_rumah.jpg')"><span class="num">Babak 1</span></div>
+            <div class="txt">
+              <h3>Kampung Halaman</h3>
+              <p>Belajar jadi jukir dari teras rumah sendiri, lalu memberanikan diri buka lahan di dekat pasar dan minimarket.</p>
+              <div class="lots"><span class="chip">Teras Rumah</span><span class="chip">Dekat Pasar</span><span class="chip">Depan Minimarket</span></div>
+            </div>
+          </article>
+          <article class="card act reveal">
+            <div class="pic" style="background-image:url('../img/bg/terminal_bus.jpg')"><span class="num">Babak 2</span></div>
+            <div class="txt">
+              <h3>Distrik Terminal</h3>
+              <p>Wilayah keras. Ada jukir liar, calo, dan massa yang memblokir jalan. Di sini semua ada jatahnya.</p>
+              <div class="lots"><span class="chip">Terminal Bus</span><span class="chip">Pasar Malam</span></div>
+            </div>
+          </article>
+          <article class="card act reveal">
+            <div class="pic" style="background-image:url('../img/bg/mal_konohara.jpg')"><span class="num">Babak 3</span></div>
+            <div class="txt">
+              <h3>Pusat Kota</h3>
+              <p>Mal berpendingin dan gedung tinggi. Lawanmu tidak lagi bertato. Mereka memakai jas.</p>
+              <div class="lots"><span class="chip">Mal Konohara</span><span class="chip">Alun-Alun Kota</span></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap narrow">
-        <h2>Bantuan dan privasi</h2>
-        <p>Iklan di game ini hanya iklan berhadiah yang kamu pilih sendiri untuk ditonton. Baca
-          <a href="privasi/">kebijakan privasi</a> untuk tahu data apa yang dipakai.
-          Pertanyaan dan laporan bug: <a href="mailto:estehtawar.games@gmail.com">estehtawar.games@gmail.com</a>.</p>
+    <!-- ===== Para pengacau ===== -->
+    <section class="section bg-paper">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Daftar buronan</span>
+          <h2>Para <span class="mark">pengacau</span> parkiran</h2>
+          <p>Mereka datang tanpa diundang. Kenali wajahnya, lalu tap secepat mungkin.</p>
+        </div>
+        <div class="roster villains">
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/thief_helmet.png" alt=""></div><h4>Maling Helm</h4><p>Gesit dan nekat. Helm pelangganmu incarannya.</p><div class="danger" aria-label="Bahaya 2 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/thief_motor.png" alt=""></div><h4>Maling Motor</h4><p>Kalau lolos, ganti ruginya dari kas kamu sendiri.</p><div class="danger" aria-label="Bahaya 3 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/thug_1.png" alt=""></div><h4>Preman</h4><p>Datang minta "uang keamanan". Bayar, tolak, atau andalkan satpammu?</p><div class="danger" aria-label="Bahaya 3 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/jukir_liar.png" alt=""></div><h4>Jukir Liar</h4><p>Merebut pelangganmu terang-terangan, tepat di depan lahanmu.</p><div class="danger" aria-label="Bahaya 3 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/calo.png" alt=""></div><h4>Calo</h4><p>Menduduki slot parkirmu seenaknya. Usir sebelum makin banyak.</p><div class="danger" aria-label="Bahaya 4 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/massa_1.png" alt=""></div><h4>Massa Bayaran</h4><p>Tiba-tiba datang dan menutup jalan masuk. Negosiasi atau tunggu?</p><div class="danger" aria-label="Bahaya 4 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/qr_scammer.png" alt=""></div><h4>Penipu QR</h4><p>Menempel kode QR palsu. Bayaran pelanggan malah mampir ke dia.</p><div class="danger" aria-label="Bahaya 4 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/hacker.png" alt=""></div><h4>Peretas CCTV</h4><p>Meretas CCTV-mu, dan maling jadi makin berani. Saatnya reboot!</p><div class="danger" aria-label="Bahaya 5 dari 5"><span>Bahaya</span><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pelanggan istimewa ===== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Pelanggan istimewa</span>
+          <h2>Tidak semua yang datang bikin pusing</h2>
+          <p>Sesekali mampir pelanggan unik dengan bonusnya sendiri. Jangan sampai terlewat.</p>
+        </div>
+        <div class="roster guests">
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/uc_ojol.png" alt=""></div><h4>Bang Ojol</h4><p>Kadang ngajak teman se-grup. Slot kosongmu langsung penuh.</p></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/uc_vip.png" alt=""></div><h4>Pelanggan Sultan</h4><p>Mobilnya mengilap, tipnya bikin geleng-geleng.</p></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/uc_ibu.png" alt=""></div><h4>Ibu-Ibu Belanja</h4><p>Pelanggan setia pasar. Rajin datang, rajin cerita.</p></article>
+          <article class="who reveal"><div class="portrait"><img class="sprite" src="../img/sprites/uc_anak.png" alt=""></div><h4>Anak Sekolah</h4><p>Datang ramai-ramai, pulang ramai-ramai.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Kutipan ===== -->
+    <section class="section tight bg-ice">
+      <div class="wrap">
+        <figure class="card quote reveal">
+          <img class="sprite" src="../img/sprites/portrait_toro.png" alt="Bang Toro">
+          <div>
+            <blockquote>“Selamat datang di terminal, Bos baru. Di sini semua ada jatahnya.”</blockquote>
+            <cite>Bang Toro, penguasa Distrik Terminal</cite>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Peta ===== -->
+    <section class="section">
+      <div class="wrap map-split">
+        <div class="map-frame reveal"><img src="../img/sprites/kingdom_map.png" width="1000" height="1300" alt="Peta Konohara dengan tiga distrik" loading="lazy"></div>
+        <div class="reveal">
+          <span class="eyebrow">Peta Konohara</span>
+          <h2 style="font-size:clamp(1.9rem,4.4vw,2.8rem);margin:10px 0 12px">Satu lahan tidak cukup. <span class="mark ice">Buka cabang!</span></h2>
+          <p style="color:var(--ink-soft);font-size:1.08rem">Tamat satu babak, perjalananmu belum selesai. Buka cabang baru, naikkan Reputasi Juragan, dan lihat
+            kerajaanmu tumbuh di peta kota.</p>
+          <ul class="ticks">
+            <li><span><b>Kartu cabang.</b> Setiap cabang punya aturan unik yang mengubah cara main.</span></li>
+            <li><span><b>Toko Juragan.</b> Tukar poin cabang dengan keuntungan yang terbawa ke cabang berikutnya.</span></li>
+            <li><span><b>Makin menantang.</b> Lawan di cabang berikutnya lebih galak, hadiahnya juga lebih besar.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section bg-paper" id="faq">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Pertanyaan umum</span>
+          <h2>Yang sering ditanyakan</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>Apakah Parkir Bos! gratis?</summary><div><p>Ya, gratis dimainkan sampai tamat. Ada pembelian opsional (Kartu Juragan dan Hapus Iklan) untuk yang ingin mendukung kami, tapi tidak wajib untuk menikmati game.</p></div></details>
+          <details class="reveal"><summary>Apakah ada iklan yang mengganggu?</summary><div><p>Tidak ada iklan paksa. Iklan hanya muncul kalau kamu menekan tombol bertanda "(iklan)" untuk mendapat hadiah, misalnya mempercepat waktu atau menggandakan penghasilan.</p></div></details>
+          <details class="reveal"><summary>Harus selalu online?</summary><div><p>Tidak. Game bisa dimainkan tanpa internet, dan penghasilan tetap berjalan saat game ditutup. Internet hanya dibutuhkan untuk menonton iklan berhadiah dan pembelian.</p></div></details>
+          <details class="reveal"><summary>Kapan rilis, dan bisa dimainkan di HP apa?</summary><div><p>Saat ini dalam tahap uji tertutup di Google Play. Game berjalan di Android 7.1 ke atas. Mau main lebih dulu? <a href="#penguji">Daftar jadi penguji</a>.</p></div></details>
+          <details class="reveal"><summary>Data apa yang dikumpulkan?</summary><div><p>Kemajuan game tersimpan di HP-mu. Iklan, pembelian, dan laporan error diproses layanan Google. Detailnya ada di <a href="privasi/">kebijakan privasi</a>.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ajakan penguji ===== -->
+    <section class="section" id="penguji">
+      <div class="wrap">
+        <div class="card cta reveal">
+          <div>
+            <span class="eyebrow" style="color:#fff">Bantu kami rilis</span>
+            <h2>Main duluan, sebelum orang lain</h2>
+            <p>Google Play meminta game diuji tertutup oleh minimal 12 orang selama 14 hari sebelum rilis. Punya HP Android dan Gmail?
+              Kirim email, nanti kami undang. Masukanmu langsung kami baca.</p>
+            <div class="actions">
+              <a class="btn white" href="mailto:estehtawar.games@gmail.com?subject=Daftar%20penguji%20Parkir%20Bos!&amp;body=Halo%20EsTehTawar%2C%20saya%20mau%20jadi%20penguji%20Parkir%20Bos!.%0A%0AEmail%20Gmail%20saya%20(untuk%20Google%20Play)%3A%20%0AMerek%20dan%20tipe%20HP%3A%20">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+                Daftar lewat email
+              </a>
+            </div>
+          </div>
+          <div class="crew" aria-hidden="true">
+            <img class="sprite" src="../img/sprites/guard_hendra.png" alt="">
+            <img class="sprite" src="../img/sprites/jukir_1.png" alt="">
+            <img class="sprite" src="../img/sprites/uc_ojol.png" alt="">
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 EsTehTawar</span>
-      <span><a href="privasi/">Kebijakan privasi</a></span>
+      <div class="brand-col">
+        <a class="logo" href="../"><img src="../img/logo.svg" width="42" height="42" alt=""><span class="wordmark"><span class="es">Es</span><span class="teh">Teh</span>Tawar</span></a>
+        <p>Parkir Bos! Kerajaan Parkir adalah game pertama EsTehTawar, studio game indie dari Indonesia.</p>
+      </div>
+      <div>
+        <h4>Parkir Bos!</h4>
+        <ul>
+          <li><a href="#faq">Pertanyaan umum</a></li>
+          <li><a href="privasi/">Kebijakan privasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="mailto:estehtawar.games@gmail.com">estehtawar.games@gmail.com</a></li>
+          <li><a href="#penguji">Jadi penguji</a></li>
+        </ul>
+      </div>
+      <div class="bottom"><span>© <span data-year>2026</span> EsTehTawar</span><span>Konohara dan semua tokohnya adalah fiksi.</span></div>
     </div>
   </footer>
+
+  <script src="../main.js" defer></script>
 </body>
 </html>

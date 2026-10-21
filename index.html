@@ -3,67 +3,222 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EsTehTawar: studio game indie</title>
-  <meta name="description" content="EsTehTawar adalah studio game indie dari Indonesia. Game pertama: Parkir Bos! Kerajaan Parkir.">
-  <link rel="icon" href="img/coin.png">
+  <meta name="color-scheme" content="light">
+  <title>EsTehTawar: studio game indie Indonesia</title>
+  <meta name="description" content="EsTehTawar membuat game mobile santai dengan rasa lokal. Game pertama kami: Parkir Bos! Kerajaan Parkir, segera hadir di Google Play.">
+  <meta property="og:title" content="EsTehTawar: studio game indie Indonesia">
+  <meta property="og:description" content="Game santai, rasa lokal, bikin nagih. Game pertama: Parkir Bos! Kerajaan Parkir.">
+  <meta property="og:image" content="https://estehtawar-games.github.io/img/og.jpg">
+  <meta property="og:url" content="https://estehtawar-games.github.io/">
+  <meta name="theme-color" content="#fff4e3">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip" href="#isi">Lewati ke isi</a>
+
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>EsTehTawar</a>
-      <nav class="nav">
-        <a href="./" aria-current="page">Beranda</a>
+      <a class="logo" href="./" aria-label="EsTehTawar, beranda">
+        <img src="img/logo.svg" width="42" height="42" alt="">
+        <span class="wordmark"><span class="es">Es</span><span class="teh">Teh</span>Tawar</span>
+      </a>
+      <nav class="nav" aria-label="Menu utama">
         <a href="parkir-bos/">Parkir Bos!</a>
-        <a href="mailto:estehtawar.games@gmail.com">Kontak</a>
+        <a class="hide-sm" href="#resep">Tentang</a>
+        <a class="btn small green" href="#penguji">Jadi penguji</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <div class="wrap hero">
-      <span class="eyebrow">Studio game indie · Indonesia</span>
-      <h1>Game santai, rasa lokal, harga merakyat.</h1>
-      <p>EsTehTawar membuat game mobile yang dekat dengan keseharian kita: parkiran, warung, pasar, dan segala dramanya.
-        Sederhana seperti es teh tawar, tapi selalu bikin balik lagi.</p>
+  <main id="isi">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Studio game indie dari Indonesia</span>
+          <h1>Game santai, <span class="mark">rasa lokal</span>, bikin nagih.</h1>
+          <p class="lead">Kami EsTehTawar. Kami bikin game mobile tentang hal yang kita lihat tiap hari: parkiran, pasar, ojol, dan
+            segala dramanya. Sederhana seperti es teh tawar, tapi selalu bikin balik lagi.</p>
+          <div class="actions">
+            <a class="btn" href="parkir-bos/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              Kenalan dengan Parkir Bos!
+            </a>
+            <a class="btn white" href="#penguji">Jadi penguji awal</a>
+          </div>
+          <div class="meta">
+            <span class="chip ice">📱 Android</span>
+            <span class="chip leaf">Gratis dimainkan</span>
+            <span class="chip tea">Bahasa Indonesia</span>
+          </div>
+        </div>
+
+        <div class="diorama" id="diorama" aria-label="Ilustrasi parkiran Parkir Bos!. Tap maling untuk mengusirnya.">
+          <img class="cloud c1 sprite" src="img/sprites/cloud.png" alt="">
+          <img class="scene sprite" src="img/bg/dekat_pasar.jpg" alt="">
+          <div class="lot"></div>
+          <div class="road"></div>
+          <img class="actor jukir sprite" src="img/sprites/jukir_1.png" alt="">
+          <img class="actor ojol sprite" src="img/sprites/uc_ojol.png" alt="">
+          <img class="actor ibu sprite" src="img/sprites/uc_ibu.png" alt="">
+          <img class="coin-bob sprite" src="img/sprites/coin.png" alt="" style="left:13%;bottom:40%">
+          <img class="coin-bob sprite" src="img/sprites/coin.png" alt="" style="left:46%;bottom:39%;animation-delay:-1.2s">
+          <button class="thief-btn" id="thief" type="button" aria-label="Tap maling helm">
+            <img class="sprite" src="img/sprites/thief_helmet.png" alt="">
+          </button>
+          <span class="tap-hint" id="tapHint">Tap malingnya!</span>
+          <div class="score" aria-live="polite"><img src="img/sprites/coin.png" alt=""><span id="score">Maling diusir: 0</span></div>
+          <img class="car sprite" src="img/sprites/sultan_car.png" alt="">
+          <img class="bus sprite" src="img/sprites/bus_side.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pita tokoh ===== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item"><img src="img/sprites/jukir_1.png" alt="">Jukir andalan</span>
+        <span class="ticker-item"><img src="img/sprites/thief_helmet.png" alt="">Maling helm</span>
+        <span class="ticker-item"><img src="img/sprites/uc_ojol.png" alt="">Bang Ojol</span>
+        <span class="ticker-item"><img src="img/sprites/thug_1.png" alt="">Preman</span>
+        <span class="ticker-item"><img src="img/sprites/uc_vip.png" alt="">Pelanggan Sultan</span>
+        <span class="ticker-item"><img src="img/sprites/calo.png" alt="">Calo</span>
+        <span class="ticker-item"><img src="img/sprites/uc_ibu.png" alt="">Ibu-ibu belanja</span>
+        <span class="ticker-item"><img src="img/sprites/jukir_liar.png" alt="">Jukir liar</span>
+        <span class="ticker-item"><img src="img/sprites/qr_scammer.png" alt="">Penipu QR</span>
+        <span class="ticker-item"><img src="img/sprites/guard_hendra.png" alt="">Satpam</span>
+        <!-- salinan untuk putaran tanpa jeda -->
+        <span class="ticker-item"><img src="img/sprites/jukir_1.png" alt="">Jukir andalan</span>
+        <span class="ticker-item"><img src="img/sprites/thief_helmet.png" alt="">Maling helm</span>
+        <span class="ticker-item"><img src="img/sprites/uc_ojol.png" alt="">Bang Ojol</span>
+        <span class="ticker-item"><img src="img/sprites/thug_1.png" alt="">Preman</span>
+        <span class="ticker-item"><img src="img/sprites/uc_vip.png" alt="">Pelanggan Sultan</span>
+        <span class="ticker-item"><img src="img/sprites/calo.png" alt="">Calo</span>
+        <span class="ticker-item"><img src="img/sprites/uc_ibu.png" alt="">Ibu-ibu belanja</span>
+        <span class="ticker-item"><img src="img/sprites/jukir_liar.png" alt="">Jukir liar</span>
+        <span class="ticker-item"><img src="img/sprites/qr_scammer.png" alt="">Penipu QR</span>
+        <span class="ticker-item"><img src="img/sprites/guard_hendra.png" alt="">Satpam</span>
+      </div>
     </div>
 
-    <section>
+    <!-- ===== Game unggulan ===== -->
+    <section class="section">
       <div class="wrap">
-        <h2>Game kami</h2>
-        <article class="game-card">
-          <a class="shot" href="parkir-bos/"><img src="img/parkirbos-pasar-malam.jpg" width="540" height="1180" alt="Tangkapan layar Parkir Bos! di lahan Pasar Malam"></a>
-          <div>
-            <span class="badge">Segera hadir di Google Play</span>
+        <div class="section-head reveal">
+          <span class="eyebrow">Game pertama kami</span>
+          <h2>Dari tiga petak di teras, jadi <span class="mark">raja parkir</span> se-Konohara.</h2>
+        </div>
+        <article class="card feature-game reveal">
+          <div class="art">
+            <div class="phones">
+              <div class="phone p1"><img src="img/shots/teras_rumah.jpg" width="1080" height="2350" alt="Lahan Teras Rumah" loading="lazy"></div>
+              <div class="phone p2"><img src="img/shots/pasar_malam.jpg" width="1080" height="2350" alt="Lahan Pasar Malam" loading="lazy"></div>
+              <div class="phone p3"><img src="img/shots/alun_alun.jpg" width="1080" height="2350" alt="Lahan Alun-Alun Kota" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="body">
+            <span class="chip tea">Idle tycoon · Segera di Google Play</span>
             <h3>Parkir Bos! Kerajaan Parkir</h3>
-            <p>Mulai dari parkiran teras rumah, bangun kerajaan parkir di seluruh Konohara. Rekrut jukir, usir maling helm,
-              hadapi preman, dan urus surat izin, sampai jadi bos parkir paling disegani.</p>
+            <p>Rekrut jukir, usir maling helm, hadapi preman dan calo, lengkapi surat izin, lalu buka lahan baru sampai ke mal dan
+              alun-alun kota. Koin tetap mengalir walau HP-mu ditutup.</p>
+            <div class="stats">
+              <div class="stat"><b>7</b><span>lahan parkir</span></div>
+              <div class="stat"><b>3</b><span>babak cerita</span></div>
+              <div class="stat"><b>10+</b><span>jenis pengacau</span></div>
+            </div>
             <div class="actions">
-              <a class="btn" href="parkir-bos/">Lihat game</a>
-              <a class="btn ghost" href="parkir-bos/privasi/">Kebijakan privasi</a>
+              <a class="btn" href="parkir-bos/">Lihat selengkapnya</a>
+              <a class="btn white" href="#penguji">Coba lebih dulu</a>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <section>
-      <div class="wrap narrow">
-        <h2>Kontak</h2>
-        <p>Ada pertanyaan, saran, atau menemukan bug? Kirim email ke
-          <a href="mailto:estehtawar.games@gmail.com">estehtawar.games@gmail.com</a>.</p>
+    <!-- ===== Resep studio ===== -->
+    <section class="section bg-paper" id="resep">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Resep EsTehTawar</span>
+          <h2>Tiga bahan yang selalu kami pakai</h2>
+          <p>Seperti es teh: bahannya sederhana, tapi takarannya harus pas.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card value reveal">
+            <div class="icon"><img class="sprite" src="img/sprites/uc_ibu.png" alt=""></div>
+            <h3>Rasa lokal, bukan impor</h3>
+            <p>Tokoh, tempat, dan masalahnya kita kenal: jukir, ojol, calo, ibu-ibu belanja, sampai urusan surat izin. Main sambil senyum
+              karena "iya, kayak gini banget".</p>
+          </article>
+          <article class="card value reveal">
+            <div class="icon round"><img class="sprite" src="img/sprites/coin.png" alt=""></div>
+            <h3>Iklan? Terserah kamu</h3>
+            <p>Tidak ada iklan yang tiba-tiba menutup layar. Iklan hanya muncul kalau kamu sendiri memilih menontonnya untuk hadiah.</p>
+          </article>
+          <article class="card value reveal">
+            <div class="icon"><img class="sprite" src="img/sprites/jukir_3.png" alt=""></div>
+            <h3>Kecil, tapi serius</h3>
+            <p>Studio satu orang. Setiap fitur dites di HP sungguhan, dan setiap masukan pemain kami baca sendiri.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ajakan penguji ===== -->
+    <section class="section" id="penguji">
+      <div class="wrap">
+        <div class="card cta reveal">
+          <div>
+            <span class="eyebrow" style="color:#fff">Butuh bantuanmu</span>
+            <h2>Jadi penguji awal Parkir Bos!</h2>
+            <p>Sebelum rilis, Google Play meminta game diuji tertutup oleh minimal 12 orang selama 14 hari. Punya HP Android dan akun Gmail?
+              Kirim email, nanti kami undang lewat Google Play. Gratis, dan namamu kami catat sebagai penguji pertama.</p>
+            <div class="actions">
+              <a class="btn white" href="mailto:estehtawar.games@gmail.com?subject=Daftar%20penguji%20Parkir%20Bos!&amp;body=Halo%20EsTehTawar%2C%20saya%20mau%20jadi%20penguji%20Parkir%20Bos!.%0A%0AEmail%20Gmail%20saya%20(untuk%20Google%20Play)%3A%20%0AMerek%20dan%20tipe%20HP%3A%20">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+                Daftar lewat email
+              </a>
+            </div>
+          </div>
+          <div class="crew" aria-hidden="true">
+            <img class="sprite" src="img/sprites/jukir_2.png" alt="">
+            <img class="sprite" src="img/sprites/jukir_1.png" alt="">
+            <img class="sprite" src="img/sprites/uc_anak.png" alt="">
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 EsTehTawar</span>
-      <span><a href="parkir-bos/privasi/">Kebijakan privasi Parkir Bos!</a></span>
+      <div class="brand-col">
+        <a class="logo" href="./"><img src="img/logo.svg" width="42" height="42" alt=""><span class="wordmark"><span class="es">Es</span><span class="teh">Teh</span>Tawar</span></a>
+        <p>Studio game indie dari Indonesia. Game santai, rasa lokal, bikin nagih.</p>
+      </div>
+      <div>
+        <h4>Game</h4>
+        <ul>
+          <li><a href="parkir-bos/">Parkir Bos! Kerajaan Parkir</a></li>
+          <li><a href="parkir-bos/privasi/">Kebijakan privasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="mailto:estehtawar.games@gmail.com">estehtawar.games@gmail.com</a></li>
+          <li><a href="#penguji">Jadi penguji</a></li>
+        </ul>
+      </div>
+      <div class="bottom"><span>© <span data-year>2026</span> EsTehTawar</span><span>Dibuat dengan es teh tawar dan banyak kopi.</span></div>
     </div>
   </footer>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
