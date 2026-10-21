@@ -24,7 +24,7 @@
   --border: 3px solid var(--ink);
   --pop: 0 6px 0 var(--ink);
   --pop-sm: 0 4px 0 var(--ink);
-  color-scheme: light;
+  color-scheme: only light;
 }
 
 * { box-sizing: border-box; }
@@ -100,6 +100,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .eyebrow::before { content: ""; width: 22px; height: 3px; border-radius: 3px; background: currentColor; }
 
+/* Samsung Internet dan Chrome tidak menggelapkan paksa situs yang punya aturan warna sendiri untuk mode gelap.
+   Desain ini sengaja selalu terang (warna mengikuti game), jadi mode gelap memakai warna yang sama. */
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: only light; }
+  html, body { background: var(--cream); color: var(--ink); }
+}
+
 /* ---------- Kepala halaman ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 20;
@@ -115,6 +122,7 @@ img { max-width: 100%; height: auto; display: block; }
 .wordmark .es { color: var(--ice-dark); }
 .wordmark .teh { color: var(--tea); }
 .nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav a { white-space: nowrap; }
 .nav a:not(.btn) {
   padding: 8px 12px; border-radius: 10px; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 0.97rem;
 }
@@ -126,7 +134,7 @@ img { max-width: 100%; height: auto; display: block; }
   .logo img { width: 36px; height: 36px; }
   .nav .btn { padding: 8px 12px; font-size: 0.9rem; margin-left: 2px; }
 }
-@media (max-width: 400px) { .nav a:not(.btn) { padding: 8px 7px; font-size: 0.9rem; } .logo { gap: 6px; } }
+@media (max-width: 420px) { .nav a:not(.btn) { display: none; } .logo { gap: 6px; } }
 
 /* ---------- Bagian umum ---------- */
 .section { padding: 76px 0; position: relative; }
