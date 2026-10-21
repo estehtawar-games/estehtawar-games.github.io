@@ -3,6 +3,22 @@
   "use strict";
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Tombol tema siang/malam. Pilihan disimpan di browser pengunjung (kalau boleh).
+  var root = document.documentElement;
+  var darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  function isDark() {
+    var t = root.getAttribute("data-theme");
+    if (t) { return t === "dark"; }
+    return !!(darkQuery && darkQuery.matches);
+  }
+  document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var next = isDark() ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) { /* mode privat: abaikan */ }
+    });
+  });
+
   // Tahun di kaki halaman.
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 

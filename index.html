@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="only light">
-  <meta name="supported-color-schemes" content="light">
+  <meta name="color-scheme" content="light dark">
   <title>EsTehTawar: studio game indie Indonesia</title>
   <meta name="description" content="EsTehTawar membuat game mobile santai dengan rasa lokal. Game pertama kami: Parkir Bos! Kerajaan Parkir, segera hadir di Google Play.">
   <meta property="og:title" content="EsTehTawar: studio game indie Indonesia">
   <meta property="og:description" content="Game santai, rasa lokal, bikin nagih. Game pertama: Parkir Bos! Kerajaan Parkir.">
   <meta property="og:image" content="https://estehtawar-games.github.io/img/og.jpg">
   <meta property="og:url" content="https://estehtawar-games.github.io/">
-  <meta name="theme-color" content="#fff4e3">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff4e3">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1c1629">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=202610211437">
-  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="style.css?v=202610211442">
+  <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 </head>
 <body>
   <a class="skip" href="#isi">Lewati ke isi</a>
@@ -32,6 +32,7 @@
         <a href="parkir-bos/">Parkir Bos!</a>
         <a class="hide-sm" href="#resep">Tentang</a>
         <a class="btn small green" href="#penguji">Jadi penguji</a>
+        <button class="theme-btn" type="button" data-theme-toggle aria-label="Ganti tema siang atau malam"><span class="moon" aria-hidden="true">🌙</span><span class="sun" aria-hidden="true">☀️</span></button>
       </nav>
     </div>
   </header>
@@ -220,6 +221,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=202610211437" defer></script>
+  <script src="main.js?v=202610211442" defer></script>
 </body>
 </html>
