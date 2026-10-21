@@ -130,13 +130,60 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nav a:not(.btn):hover, .nav a[aria-current="page"] { background: var(--surface); box-shadow: inset 0 0 0 2px var(--line); }
 .nav .btn { margin-left: 8px; }
+/* Tombol menu ☰ dan isi khusus panel samping: hanya di HP */
+.menu-btn, .drawer-only, .drawer-head { display: none; }
+.menu-btn {
+  width: 42px; height: 42px; flex: none; margin-left: 8px; padding: 0; cursor: pointer;
+  border: var(--border); border-radius: 12px; background: var(--surface); box-shadow: var(--pop-sm);
+  flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+}
+.menu-btn span { display: block; width: 18px; height: 3px; border-radius: 3px; background: var(--text); transition: transform 0.25s, opacity 0.2s; }
+.menu-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--line); }
+.nav-open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-open .menu-btn span:nth-child(2) { opacity: 0; }
+.nav-open .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-backdrop { display: none; }
+
 @media (max-width: 760px) {
-  .nav a.hide-sm { display: none; }
+  /* Efek blur header membuat panel fixed terkurung di dalam header, jadi dimatikan di HP. */
+  .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--cream); }
   .wordmark { font-size: 1.22rem; }
   .logo img { width: 36px; height: 36px; }
-  .nav .btn { padding: 8px 12px; font-size: 0.9rem; margin-left: 2px; }
+  .logo { gap: 7px; }
+  .site-header .theme-btn { margin-left: auto; }
+  .menu-btn { display: flex; }
+  .nav:focus { outline: none; }
+
+  /* Panel samping dari kanan */
+  .nav {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 40; width: min(320px, 86vw);
+    flex-direction: column; align-items: stretch; gap: 6px; margin: 0; padding: 16px 18px 24px;
+    background: var(--surface); border-left: var(--border); box-shadow: -6px 0 0 var(--line);
+    overflow-y: auto; overscroll-behavior: contain;
+    transform: translateX(110%); visibility: hidden;
+    transition: transform 0.3s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0.3s;
+  }
+  .nav-open .nav { transform: none; visibility: visible; transition: transform 0.3s cubic-bezier(.2,.8,.2,1), visibility 0s; }
+  .nav .drawer-only { display: flex; }
+  .drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 2px 2px 10px; margin-bottom: 4px; border-bottom: 2px dashed var(--line); }
+  .drawer-head .display { font-size: 1.4rem; }
+  .menu-close {
+    width: 40px; height: 40px; border: var(--border); border-radius: 12px; background: var(--sun); color: var(--ink);
+    font-size: 1.1rem; font-weight: 900; cursor: pointer; box-shadow: 0 3px 0 var(--line);
+  }
+  .nav a:not(.btn) { display: flex; align-items: center; padding: 13px 14px; font-size: 1.12rem; border-radius: 14px; }
+  .nav a:not(.btn)::after { content: "›"; margin-left: auto; font-size: 1.4rem; opacity: 0.45; }
+  .nav .btn { margin: 12px 0 0; justify-content: center; padding: 14px; font-size: 1.08rem; }
+  .drawer-art { width: 96px; margin: auto auto 0; padding-top: 18px; animation: bob 1.8s ease-in-out infinite; transform-origin: 50% 100%; }
+
+  .nav-backdrop {
+    display: block; position: fixed; inset: 0; z-index: 35; background: rgba(18, 12, 26, 0.55);
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
+  .nav-open body { overflow: hidden; }
 }
-@media (max-width: 420px) { .nav a:not(.btn) { display: none; } .logo { gap: 6px; } }
+@media (max-width: 360px) { .wordmark { font-size: 1.08rem; } .theme-btn, .menu-btn { width: 38px; height: 38px; } }
 
 /* ---------- Bagian umum ---------- */
 .section { padding: 76px 0; position: relative; }
@@ -362,7 +409,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .game-hero .lead { max-width: 640px; margin: 22px auto 0; font-size: 1.15rem; color: #f2ecfa; }
 .game-hero .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 28px; }
-.lineup { display: flex; justify-content: center; align-items: flex-end; gap: clamp(0px, 1.2vw, 16px); margin-top: 40px; padding: 0 4px; }
+.lineup { display: flex; justify-content: center; align-items: flex-end; gap: clamp(0px, 1.2vw, 16px); margin-top: 40px; padding: 0 4px; overflow: hidden; }
+@media (max-width: 380px) { .lineup img { width: 40px !important; } }
 .lineup img { width: clamp(46px, 10.5vw, 118px); transform-origin: 50% 100%; animation: bob 2s ease-in-out infinite; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)); }
 .lineup img:nth-child(2n) { animation-delay: -0.5s; }
 .lineup img:nth-child(3n) { animation-delay: -1.1s; }
@@ -418,7 +466,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Kartu tokoh (pengacau dan pelanggan) */
 .roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(190px, 100%), 1fr)); gap: 18px; }
-@media (max-width: 520px) { .roster { grid-template-columns: 1fr 1fr; gap: 12px; } }
+@media (max-width: 520px) { .roster { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .who { padding: 12px 10px 14px; } }
+@media (max-width: 360px) { .danger span { display: none; } .danger i { width: 11px; height: 11px; } }
 .who {
   background: var(--surface); color: var(--text); border: var(--border); border-radius: 20px; padding: 14px 14px 16px; text-align: center;
   box-shadow: var(--pop-sm); transition: transform 0.2s cubic-bezier(.3,1.5,.6,1);
@@ -431,7 +480,7 @@ img { max-width: 100%; height: auto; display: block; }
 .who p { font-size: 0.9rem; color: var(--ink-soft); margin-top: 4px; line-height: 1.45; }
 .roster.villains .who .portrait { background: radial-gradient(circle at 50% 75%, #ffcfc8, #fff1ee 70%); }
 .roster.guests { grid-template-columns: repeat(4, 1fr); }
-@media (max-width: 760px) { .roster.guests { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .roster.guests { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .roster.guests .who .portrait { background: radial-gradient(circle at 50% 75%, #c9efd8, #f3fff8 70%); }
 .danger { display: flex; justify-content: center; align-items: center; gap: 3px; margin-top: 10px; font-size: 0.75rem; font-weight: 800; color: var(--ink-soft); }
 .danger i { width: 13px; height: 13px; border-radius: 50%; border: 2px solid var(--line); background: var(--surface); }
@@ -585,7 +634,7 @@ img { max-width: 100%; height: auto; display: block; }
   :root:not([data-theme="light"]) .theme-btn .moon { display: none; }
   :root:not([data-theme="light"]) .theme-btn .sun { display: inline; }
 }
-@media (max-width: 420px) { .theme-btn { width: 38px; height: 38px; font-size: 1rem; margin-left: 4px; } }
+
 
 /* ---------- Muncul saat digulir ---------- */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.2,.8,.2,1); }

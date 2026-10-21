@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../style.css?v=202610211442">
+  <link rel="stylesheet" href="../../style.css?v=202610211449">
   <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 </head>
 <body>
@@ -24,13 +24,20 @@
         <img src="../../img/logo.svg" width="42" height="42" alt="">
         <span class="wordmark"><span class="es">Es</span><span class="teh">Teh</span>Tawar</span>
       </a>
-      <nav class="nav" aria-label="Menu utama">
-        <a href="../">Parkir Bos!</a>
-        <a class="hide-sm" href="#english">English</a>
-        <a class="btn small white" href="mailto:estehtawar.games@gmail.com">Kontak</a>
-        <button class="theme-btn" type="button" data-theme-toggle aria-label="Ganti tema siang atau malam"><span class="moon" aria-hidden="true">🌙</span><span class="sun" aria-hidden="true">☀️</span></button>
+      <nav class="nav" id="menu" aria-label="Menu utama">
+        <div class="drawer-head"><span class="display">Menu</span><button class="menu-close" type="button" data-menu-close aria-label="Tutup menu">✕</button></div>
+        <a class="drawer-only" href="../../">Beranda</a>
+        <a href="../../parkir-bos/">Parkir Bos!</a>
+        <a href="../../parkir-bos/#faq">FAQ</a>
+        <a class="drawer-only" href="../../parkir-bos/privasi/" aria-current="page">Kebijakan privasi</a>
+        <a href="mailto:estehtawar.games@gmail.com">Kontak</a>
+        <a class="btn small green" href="../../parkir-bos/#penguji">Jadi penguji</a>
+        <img class="drawer-only drawer-art sprite" src="../../img/sprites/jukir_1.png" alt="">
       </nav>
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Ganti tema siang atau malam"><span class="moon" aria-hidden="true">🌙</span><span class="sun" aria-hidden="true">☀️</span></button>
+      <button class="menu-btn" type="button" data-menu-toggle aria-controls="menu" aria-expanded="false" aria-label="Buka menu"><span></span><span></span><span></span></button>
     </div>
+    <div class="nav-backdrop" data-menu-close></div>
   </header>
 
   <div class="doc-hero">
@@ -180,6 +187,6 @@
       <div class="bottom"><span>© 2026 EsTehTawar</span><span>Terakhir diperbarui 21 Oktober 2026</span></div>
     </div>
   </footer>
-  <script src="../../main.js?v=202610211442" defer></script>
+  <script src="../../main.js?v=202610211449" defer></script>
 </body>
 </html>

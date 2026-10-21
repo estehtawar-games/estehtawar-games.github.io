@@ -19,6 +19,39 @@
     });
   });
 
+  // Menu ☰ di HP: panel samping. Tutup lewat ✕, latar gelap, tombol Esc, atau setelah memilih link.
+  var menuBtn = document.querySelector("[data-menu-toggle]");
+  var menu = document.getElementById("menu");
+  function setMenu(open) {
+    if (!menuBtn || !menu) { return; }
+    root.classList.toggle("nav-open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+    if (open) {
+      // Fokus ke panel (bukan ke link pertama) supaya tidak ada link yang tampak terpilih.
+      menu.setAttribute("tabindex", "-1");
+      setTimeout(function () { menu.focus({ preventScroll: true }); }, 60);
+    } else {
+      menuBtn.focus({ preventScroll: true });
+    }
+  }
+  if (menuBtn && menu) {
+    menuBtn.addEventListener("click", function () { setMenu(!root.classList.contains("nav-open")); });
+    document.querySelectorAll("[data-menu-close]").forEach(function (el) {
+      el.addEventListener("click", function () { setMenu(false); });
+    });
+    menu.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { if (root.classList.contains("nav-open")) { setMenu(false); } });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && root.classList.contains("nav-open")) { setMenu(false); }
+    });
+    // Layar dilebarkan (HP diputar / jendela desktop): pastikan panel tertutup.
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 760 && root.classList.contains("nav-open")) { setMenu(false); }
+    });
+  }
+
   // Tahun di kaki halaman.
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
